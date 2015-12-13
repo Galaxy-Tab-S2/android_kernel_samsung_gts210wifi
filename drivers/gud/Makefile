@@ -1,0 +1,8 @@
+obj-$(CONFIG_SOC_EXYNOS5422) += gud-exynos5422/
+obj-$(CONFIG_SOC_EXYNOS5430) += gud-exynos5430/
+ifeq ($(CONFIG_SOC_EXYNOS5433_TBASE302), y)
+	obj-$(CONFIG_SOC_EXYNOS5433_TBASE302) += gud-exynos5433_tbase302/
+else ifeq ($(CONFIG_SOC_EXYNOS5433), y)
+	obj-$(CONFIG_SOC_EXYNOS5433) += gud-exynos5433/
+endif
+obj-$(CONFIG_TRUSTONIC_TRUSTED_UI) += TlcTui/
